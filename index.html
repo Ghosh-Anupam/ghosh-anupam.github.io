@@ -22,7 +22,7 @@
       --section-bg: #16191b;
       --highlight-bg: #63b3ed; 
       --link-color: #4299e1;
-      --highlight-color: #F7E7CE ;
+      --highlight-color: #f7eece ;
     }
     [data-theme="light"] {
       --bg-color:   #FFFFF0 ; 
@@ -51,7 +51,7 @@
         /* STICKY FOOTER LOGIC */
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Forces body to take full height of screen */
+        min-height: 100vh;
         
         /* MOBILE SCROLL PREVENTION */
         overflow-x: hidden; 
@@ -61,19 +61,37 @@
         text-align: justify;
     }
 
+    /* UPDATED HEADER - Centered name with nav below */
     header { 
       display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       color: var(--nav-text); 
-      padding: 10px 20px; 
+      padding: 20px 20px 15px 20px; 
       margin-bottom: 0; 
       position: relative; 
       z-index: 1; 
       margin-top: -20px;
       margin-left: -20px;
       margin-right: -20px;
-      flex-wrap: wrap; /* Allows wrapping on small screens */
+    }
+    
+    /* Social icons in top right of header */
+    .header-social-icons {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 15px;
+      z-index: 10;
+    }
+    .header-social-icons a { 
+      font-size: 1em; 
+      color: var(--nav-text); 
+    }
+    .header-social-icons a:hover { 
+      color: var(--link-color); 
     }
     header::before { 
       content: ''; 
@@ -86,19 +104,24 @@
       z-index: -1; 
     }
 
+    /* UPDATED NAV - Centered below name, no slashes */
     nav { 
         background: none; 
         padding: 0; 
-        text-align: right; 
-        font-size: 1.35rem; 
-        flex-wrap: wrap; /* Fix for mobile nav overflow */
+        text-align: center; 
+        font-size: 1.2rem; 
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 25px;
     }
     nav a { 
-        margin: 0 15px; 
         color: var(--nav-text); 
         text-decoration: none; 
         font-weight: bold; 
-        white-space: nowrap; 
+        white-space: nowrap;
+        padding: 5px 0;
     } 
     nav a:hover { text-decoration: underline; }
     
@@ -108,9 +131,9 @@
 
     /* RESPONSIVE IMAGE FIX */
     .profile-pic-wrapper {
-      width: 350px;                /* Be flexible on mobile */
-      max-width: 350px;           /* Strict limit for desktop */
-      height: 500px;               /* Auto height */
+      width: 350px;
+      max-width: 350px;
+      height: 500px;
       aspect-ratio: 5/6;          
       overflow: hidden;           
       margin: 0 auto;             
@@ -124,7 +147,14 @@
       object-position: center;
     }
 
-    h1 { font-size: 3em; margin: 0; color: var(--nav-text); font-weight: bold; text-align: left; } 
+    /* UPDATED: Name centered */
+    h1 { 
+      font-size: 3em; 
+      margin: 0; 
+      color: var(--nav-text); 
+      font-weight: bold; 
+      text-align: center; 
+    } 
     h2 { font-size: 3em; color: var(--text-color); border-bottom: 1px solid var(--section-bg); padding-bottom: 5px; margin-top: 20px; text-align: center; margin-bottom: 20px; }
     h3 { font-size: 2em; color: var(--text-color); margin-top: 20px; text-align: left; }
     h4 { font-size: 1.5em; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
@@ -185,13 +215,11 @@
     /* FOOTER STYLING */
     footer { 
         text-align: center; 
-        margin-top: auto; /* This pushes the footer to the bottom */
+        margin-top: auto;
         font-size: 0.8em; 
         color: var(--text-color); 
         border-top: 1px solid var(--section-bg); 
         padding: 20px; 
-        
-        /* Centering Logic */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -209,7 +237,12 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     .biography { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 20px; margin-top: 0; }
-    .bio-left { text-align: center; }
+    
+    /* Bio-left section */
+    .bio-left { 
+      text-align: center; 
+    }
+    
     .bio-right { text-align: left; flex: 3; }
     .passage { margin-bottom: 20px; font-size: 1.25em; }
     .interests-education { display: flex; gap: 40px; }
@@ -217,15 +250,13 @@
     .skills { flex-basis: 50%; }
     .education ul, .skills ul { list-style-type: none; padding-left: 0; }
     .education li, .skills li { margin-bottom: 10px; }
-    .social-icons { margin-top: 10px; }
-    .social-icons a { margin: 0 5px; font-size: 2em; color: var(--link-color); }
-    .social-icons a:hover { color: var(--text-color); }
+    
     .education-entry { margin-bottom: 15px; font-size: 1.25em; }
     .education-degree { font-weight: bold; margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; }
     .education-degree i { margin-right: 8px; }
     .degree-text { white-space: nowrap; }
     .education-date { white-space: nowrap; }
-    .education-institution { margin-top: 0; /* Remove italic */ }
+    .education-institution { margin-top: 0; }
     
     .teaching-entry {
       margin-bottom: 20px;
@@ -293,18 +324,7 @@
       margin-left: 5px; 
     }
 
-    /* ANNOTATED CHANGES FOR SMALLER SCREEN FRIENDLINESS */
-    /* 
-    To make your job market website more mobile-friendly (inspired by clean, responsive academic sites like the example you mentioned), 
-    we're enhancing the existing @media query. Key goals: 
-    - Prevent horizontal scrolling by constraining widths and removing negative margins on small screens.
-    - Stack elements vertically for better readability (e.g., header, bio sections).
-    - Scale down fonts and images proportionally without losing elegance.
-    - Adjust gaps and paddings to fit narrow viewports (e.g., phones under 600px).
-    - Add a new breakpoint for very small screens (<600px) to handle ultra-narrow devices.
-    These changes build on your current code—test on a phone or browser dev tools (F12 > toggle device toolbar).
-    */
-
+    /* RESPONSIVE STYLES */
     @media (max-width: 900px) { 
         .biography { flex-direction: column; align-items: center; } 
         .interests-education { flex-direction: column; } 
@@ -312,63 +332,80 @@
         h1 { font-size: 2em; text-align: center; margin-bottom: 10px;}
         header { 
           flex-direction: column; 
-          /* ANNOTATION: Stack header vertically to avoid squeezing nav links; reduces width pressure. */
-          margin-left: 0; /* ANNOTATION: Remove negative left/right margins to prevent full-bleed extension on mobile. */
+          margin-left: 0;
           margin-right: 0;
-          padding: 10px; /* ANNOTATION: Tighten padding for more breathing room without wasting space. */
+          padding: 15px 10px;
         }
         nav { 
           text-align: center; 
           margin-top: 10px; 
-          font-size: 1.1rem; /* ANNOTATION: Shrink nav font to fit more links without wrapping awkwardly. */
-        }
-        nav a { 
-          margin: 0 8px; /* ANNOTATION: Halve margins between links to compress horizontal space. */
-          display: inline-block; /* ANNOTATION: Ensures links wrap cleanly if needed, but at this size they should fit in one line. */
+          font-size: 1rem;
+          gap: 5px 15px;
         }
         body { 
-          padding: 10px; /* ANNOTATION: Increase body padding slightly on sides for touch-friendly edges, but keep it minimal. */
-          font-size: 1.1em; /* ANNOTATION: Reduce base font size to prevent text overflow in paragraphs/lists. */
+          padding: 10px;
+          font-size: 1.1em;
         }
-        /* ANNOTATION: Target long sections like abstracts and skills lists to wrap text better. */
         .abstract, .passage, ul { 
           font-size: 1.1em; 
-          padding-left: 20px; /* ANNOTATION: Halve ul padding-left for indented lists on narrow screens. */
+          padding-left: 20px;
+        }
+        
+        .header-social-icons {
+          top: 15px;
+          right: 15px;
+          gap: 10px;
+        }
+        .header-social-icons a {
+          font-size: 1.1em;
         }
     }
 
-    /* NEW: Additional breakpoint for very small screens (e.g., phones <600px) */
+    /* Small screens (phones) */
     @media (max-width: 600px) { 
-      /* ANNOTATION: This handles portrait phones where 900px query isn't enough—focus on ultra-compact layout. */
       .profile-pic-wrapper { 
-        width: 100%; /* ANNOTATION: Make profile pic full-width (responsive) instead of fixed 350px, which would cause scrolling. */
-        max-width: 280px; /* ANNOTATION: Cap at a smaller max to avoid dominating tiny screens. */
-        height: auto; /* ANNOTATION: Let height flow naturally with width for better aspect ratio on mobile. */
-        aspect-ratio: auto; /* ANNOTATION: Disable fixed ratio; let image dictate for flexibility. */
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: 5/6;
       }
-      h1 { font-size: 1.75em; } /* ANNOTATION: Further reduce h1 for pocket-sized devices. */
+      h1 { font-size: 1.75em; }
       h3, h4 { 
         font-size: 1.5em; 
-        margin-left: 0; /* ANNOTATION: Remove left margins on headings to center-align content fully. */
+        margin-left: 0;
         text-align: center; 
       }
-      .biography, .interests-education { gap: 20px; } /* ANNOTATION: Halve gaps in flex containers to stack tighter. */
+      .biography, .interests-education { gap: 20px; }
       .award-entry, .education-degree, .teaching-header { 
-        flex-direction: column; /* ANNOTATION: Stack name/date pairs vertically to avoid cramping. */
+        flex-direction: column;
         align-items: flex-start; 
         text-align: left; 
       }
       .award-date, .education-date { 
         text-align: left; 
-        margin-top: 5px; /* ANNOTATION: No more right-align; treat as subtitle. */
+        margin-top: 5px;
       }
-      .social-icons a { font-size: 2em; } /* ANNOTATION: Shrink icons to prevent overflow in bio-left. */
       .pdf-link { 
-        display: block; /* ANNOTATION: Stack download links vertically for easier tapping. */
-        margin: 5px 0; 
+        display: inline-block;
+        margin: 3px; 
         text-align: center; 
       }
-      footer { padding: 10px; } /* ANNOTATION: Compact footer to save vertical space. */
+      footer { padding: 10px; }
+      
+      .header-social-icons {
+        position: static;
+        justify-content: center;
+        margin-bottom: 10px;
+        order: -1;
+      }
+      .header-social-icons a {
+        font-size: 1.2em;
+      }
+      
+      nav {
+        gap: 3px 12px;
+        font-size: 0.95rem;
+      }
     }
 
     @media print {
@@ -380,9 +417,18 @@
 </head>
 <body data-theme="light"> 
   <header>
+    <div class="header-social-icons">
+      <a href="mailto:aghosh4@huskers.unl.edu" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a> 
+      <a href="https://www.linkedin.com/in/aghosh4/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>  
+      <a href="https://github.com/Ghosh-Anupam" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>  
+      <a href="https://x.com/ghosh2397" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a> 
+    </div>
     <h1>Anupam Ghosh</h1>
     <nav>
-    <a href="#home">Home</a> | <a href="#research">Research</a> | <a href="#teaching">Teaching</a> | <a href="#awards">Awards</a> | <a href="#contact">References</a>
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">References</a>
     </nav>
   </header>
   <section id="home" class="active">
@@ -390,12 +436,6 @@
       <div class="bio-left">
         <div class="profile-pic-wrapper">
           <img src="profile.png" alt="Anupam Ghosh">
-        </div>
-        <div class="social-icons">
-          <a href="mailto:aghosh4@huskers.unl.edu" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a> 
-          <a href="https://www.linkedin.com/in/aghosh4/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>  
-          <a href="https://github.com/Ghosh-Anupam" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>  
-          <a href="https://x.com/ghosh2397" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a> 
         </div>
       </div>
       <div class="bio-right">
@@ -426,7 +466,6 @@
                   <a href="https://drive.google.com/file/d/1ePlDPK4-_g51_OtdVoU-IAHznFgGi77f/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Job Market Paper</a> 
                   <a href="https://drive.google.com/file/d/1ivLkXIWvnln5_5eveoDRPFGlwyWyURON/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Research Statement</a>
                   <a href="https://drive.google.com/file/d/1WIEzpAeOo4E3PxWqers7opEiqybexR-t/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Teaching Statement</a>
-                  <a href="https://drive.google.com/file/d/1QkYQTCdSxMH8sZ29a4pCJ6hXKeMbAm2v/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Teaching Syllabus</a>
         </div>
         </div>
         <div class="interests-education">
@@ -446,7 +485,7 @@
             </div>
             <div class="education-entry">
               <div class="education-degree"><span class="degree-text"><i class="fas fa-graduation-cap"></i> B.Sc in Economics</span> <span class="education-date">2011 – 2014</span></div>
-              <div class="education-institution"><h7>St. Xavier’s College, Kolkata, India</h7></div>
+              <div class="education-institution"><h7>St. Xavier's College, Kolkata, India</h7></div>
             </div>
           </div>
           <div class="skills">
@@ -485,13 +524,13 @@
     </ul>
     <h4>Hurricanes, Migration and Crime</h4>
     <ul><h9>
-      <li>Examine the effect of hurricanes on migration flows by utilizing the IRS’s migration flow data.</li>
+      <li>Examine the effect of hurricanes on migration flows by utilizing the IRS's migration flow data.</li>
       <li>Provide new evidence on the effect of hurricane-induced migrants on the crime landscape of receiving counties.</li>
     </h9></ul>
     <h4>Gender of the Firstborn and Maternal Victimization</h4>
     <ul><h9>
-      <li>Using DHS data from India, I explore the role of the sex of the firstborn child on mother’s domestic violence experience.</li>
-      <li>To explore possible mechanisms, I also look at father’s reported gender attitude.</li>
+      <li>Using DHS data from India, I explore the role of the sex of the firstborn child on mother's domestic violence experience.</li>
+      <li>To explore possible mechanisms, I also look at father's reported gender attitude.</li>
       </h9></ul>
     <hr class="subsection">
     <h3>Presentations</h3>
@@ -527,7 +566,7 @@
     </div>
     <hr class="subsection">
   </section>
-<section id="teaching">
+  <section id="teaching">
         <div class="teaching-entry">
           <div class="teaching-header">
             <span>Instructor of Record</span>
@@ -582,32 +621,6 @@
           <div class="teaching-course">Micro and Macro Economics, Statistics, & Indian Economic History</div>
         </div>
       </section>
-  <section id="awards">
-    <div class="award-entry">
-      <div class="award-name">Workshop Travel Grant, <h7>Arnold Ventures</h7> <h9>($914)</h9></div>
-      <div class="award-date">2025</div>
-    </div>
-    <div class="award-entry">
-      <div class="award-name">PhD Teaching Certificate, <h7>University of Nebraska-Lincoln</h7> <h9>($300)</h9></div>
-      <div class="award-date">2024</div>
-    </div>
-    <div class="award-entry">
-      <div class="award-name">McConnell Dissertation Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($8,000)</h9></div>
-      <div class="award-date">2024 - 2025</div>
-    </div>
-    <div class="award-entry">
-      <div class="award-name">Robert C. and Patricia N. Bingham Teaching Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($3,000)</h9></div>
-      <div class="award-date">2023 - 2024</div>
-    </div>
-    <div class="award-entry">
-      <div class="award-name">Ogle Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($5,500)</h9></div>
-      <div class="award-date">2022 - 2024</div>
-    </div>
-    <div class="award-entry">
-      <div class="award-name">Othmer Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($8,000)</h9></div>
-      <div class="award-date">2020 - 2022</div>
-      </div>
-  </section>
   <section id="contact">
     <div class="references-grid">
       <div class="reference">
