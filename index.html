@@ -131,9 +131,9 @@
 
     /* RESPONSIVE IMAGE FIX */
     .profile-pic-wrapper {
-      width: 350px;
+      width: 375px;
       max-width: 350px;
-      height: 500px;
+      height: 550px;
       aspect-ratio: 5/6;          
       overflow: hidden;           
       margin: 0 auto;             
@@ -413,6 +413,32 @@
         size: landscape;
       }
     }
+    
+    .biography > div {  /* Targets bio-left and bio-right */
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .bio-left img {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bio-right .passage {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .bio-right .passage p:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      line-height: 1.4;  /* Adjust this value if needed for optical alignment */
+    }
+
+    h9 {
+      margin-top: 0 !important;  /* Override any existing margins on h9 */
+    }
+    
   </style>
 </head>
 <body data-theme="light"> 
