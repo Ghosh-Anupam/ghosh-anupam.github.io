@@ -193,26 +193,27 @@
     .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.1em; }
     
     .pdf-link { 
-        background: var(--section-bg); 
-        padding: 4px 10px; 
-        border-radius: 5px; 
-        display: inline-block; 
-        margin: 3px; 
-        color: var(--text-color); 
-        border: 1px solid #ccc; 
-        font-size: 0.95em;
-        text-decoration: none;
-        transition: background 0.2s;
-    }
-    .pdf-link:hover {
-        background-color: #e2e8f0;
-        text-decoration: none;
-        color: #000;
-    }
-    [data-theme="dark"] .pdf-link:hover {
-        background-color: #2d3748; 
-        color: #fff;
-    }
+    background: var(--nav-bg); 
+    padding: 4px 10px; 
+    border-radius: 5px; 
+    display: inline-block; 
+    margin: 3px; 
+    color: var(--bg-color); 
+    border: none; 
+    font-size: 0.95em;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+.pdf-link:hover {
+    background-color: #003366;
+    text-decoration: none;
+    color: var(--bg-color);
+    transform: translateY(-1px);
+}
+[data-theme="dark"] .pdf-link:hover {
+    background-color: #2d3748; 
+    color: var(--bg-color);
+}
 
     /* FOOTER STYLING */
     footer { 
@@ -497,12 +498,11 @@
         </p>
         
         <p>
-          Got questions about my application, teaching, or research? Want to collaborate? I'd love to hear from you at <a href="mailto:aghosh4@huskers.unl.edu"><strong>aghosh4@huskers.unl.edu</strong></a> or <a href="mailto:ghoshanupam34@outlook.com"><strong>ghoshanupam34@outlook.com</strong></a>.
+          Got questions about my application, teaching, or research? Want to collaborate? I'd love to hear from you at: <a href="mailto:aghosh4@huskers.unl.edu"><strong>aghosh4@huskers.unl.edu</strong></a> or <a href="mailto:ghoshanupam34@outlook.com"><strong>ghoshanupam34@outlook.com</strong></a>.
         </p>
         </h9>
 
         <div style="margin-top: 25px;">
-                  <h8>Download My:</h8> 
                   <a href="https://drive.google.com/file/d/1cl7sz5z37Dui1OrKEauYstFm9k_lMxtd/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">CV</a> 
                   <a href="https://drive.google.com/file/d/16OFpmkrjoLO9WW2-1xGdZut7l0jIuHFx/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Resume</a> 
                   <a href="https://drive.google.com/file/d/1ePlDPK4-_g51_OtdVoU-IAHznFgGi77f/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Job Market Paper</a> 
