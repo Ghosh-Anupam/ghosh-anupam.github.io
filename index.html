@@ -1,448 +1,469 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="fnXk2woS910T4LGek_U2YvqfLHQn6DyXysR4SqFc_K0" />
-
+  
   <title>Anupam Ghosh | Economics PhD Candidate</title>
   <meta name="description" content="Personal academic website of Anupam Ghosh, a PhD candidate in Economics at the University of Nebraska-Lincoln (UNL) specializing in Labor, Public, and Environmental Economics. 2025-2026 Job Market Candidate.">
   <meta name="keywords" content="Anupam Ghosh, Economics, PhD, UNL, University of Nebraska-Lincoln, Job Market Paper, Labor Economics, Environmental Economics, Economist">
   <meta name="author" content="Anupam Ghosh">
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Ghosh-Anupam/ghosh-anupam.github.io/main/favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
   <style>
     :root {
-      --bg-color: #16191b;
-      --text-color: #fffbf1;
-      --nav-bg: #16191b;
-      --nav-text: #fffbf1;
+      --bg-color: #16191b; 
+      --text-color: #fffbf1 ; 
+      --nav-bg: #16191b; 
+      --nav-text: #fffbf1 ; 
       --header-border: #16191b;
       --section-bg: #16191b;
-      --highlight-bg: #63b3ed;
+      --highlight-bg: #63b3ed; 
       --link-color: #4299e1;
-      --highlight-color: #f7eece;
-
-      /* layout helpers */
-      --content-pad: clamp(10px, 2vw, 18px);
-      --home-shift: clamp(14px, 2.5vw, 60px); /* pushes bio text down on desktop */
+      --highlight-color: #f7eece ;
     }
-
     [data-theme="light"] {
-      --bg-color: #fffbf1;
+      --bg-color:   #fffbf1 ; 
       --text-color: #3B444B;
-      --nav-bg: #002147;
-      --nav-text: hsl(60, 11%, 87%);
+      --nav-bg: #002147; 
+      --nav-text: hsl(60, 11%, 87%) ; 
       --header-border: #002147;
       --section-bg: #fffbf1;
       --highlight-bg: #fffbf1;
       --link-color: #014083;
-      --highlight-color: #480607;
+      --highlight-color: #480607 ;
+    }
+    
+    /* GLOBAL LAYOUT FIXES */
+    body { 
+        font-family: Garamond, serif; 
+        max-width: 1300px; 
+        margin: 0 auto; 
+        padding: 5px; 
+        line-height: 1.6; 
+        color: var(--text-color); 
+        font-size: 1.1em; 
+        background-color: var(--bg-color); 
+        transition: all 0.3s ease; 
+        
+        /* STICKY FOOTER LOGIC */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        
+        /* MOBILE SCROLL PREVENTION */
+        overflow-x: hidden; 
     }
 
-    /* ====== GLOBAL RESET / CONSISTENCY ====== */
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    img { max-width: 100%; display: block; border-radius: 8px; }
-
-    body {
-      font-family: Garamond, serif;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: var(--content-pad);
-      line-height: 1.6;
-      color: var(--text-color);
-      font-size: 1.1em;
-      background-color: var(--bg-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
-
-      /* sticky footer */
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-
-      overflow-x: hidden;
+    p, .passage, .abstract, li {
+        text-align: justify;
     }
 
-    p, li { text-align: justify; }
-    p { margin: 0.55rem 0; padding: 0; }
-    ul { margin: 0.5rem 0; padding-left: 1.2rem; }
-    li { margin: 0.45rem 0; }
-
-    a { color: var(--link-color); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ====== HEADER ====== */
-    header {
-      position: relative;
-      color: var(--nav-text);
-      padding: 10px 0 6px 0;
-      margin: 0;
-      z-index: 1;
-
-      display: flex;
+    /* UPDATED HEADER - Full width but shorter height */
+    header { 
+      display: flex; 
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      color: var(--nav-text); 
+      padding: 8px 20px 6px 20px;
+      margin-bottom: 0; 
+      position: relative; 
+      z-index: 1; 
+      margin-top: -5px;
+      margin-left: -5px;
+      margin-right: -5px;
     }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: calc(50% - 50vw);
-      width: 100vw;
-      height: 100%;
-      background: var(--nav-bg);
-      z-index: -1;
+    
+    /* Full-width background */
+    header::before { 
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      left: calc(50% - 50vw); 
+      width: 100vw; 
+      height: 100%; 
+      background: var(--nav-bg); 
+      z-index: -1; 
     }
-
+    
+    /* Social icons in top right of header */
     .header-social-icons {
       position: absolute;
       top: 10px;
-      right: 18px;
+      right: 30px;
       display: flex;
-      gap: 14px;
+      gap: 15px;
       z-index: 10;
     }
-
-    .header-social-icons a {
-      font-size: 1em;
-      color: var(--nav-text);
+    .header-social-icons a { 
+      font-size: 1em; 
+      color: var(--nav-text); 
     }
-    .header-social-icons a:hover { color: var(--link-color); }
-
-    h1 {
-      font-size: 2.2em;
-      margin: 0;
-      color: var(--nav-text);
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.1;
-      padding: 2px 0 0 0;
+    .header-social-icons a:hover { 
+      color: var(--link-color); 
     }
 
-    nav {
-      background: none;
-      margin-top: 6px;
-      padding: 0;
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px 18px;
-      font-size: 1.1rem;
+    /* UPDATED NAV - Tighter spacing */
+    nav { 
+        background: none; 
+        padding: 0; 
+        text-align: center; 
+        font-size: 1.1rem;
+        margin-top: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 20px;
     }
+    nav a { 
+        color: var(--nav-text); 
+        text-decoration: none; 
+        font-weight: bold; 
+        white-space: nowrap;
+        padding: 3px 0;
+    } 
+    nav a:hover { text-decoration: underline; }
+    
+    .toggle-btn { background: none; border: none; font-size: 1.25em; cursor: pointer; color: orange; margin-left: 10px;}
+    
+    img { border-radius: 8px; }
 
-    nav a {
-      color: var(--nav-text);
-      font-weight: bold;
-      white-space: nowrap;
-      padding: 3px 0;
-    }
-
-    .toggle-btn {
-      background: none;
-      border: none;
-      font-size: 1.25em;
-      cursor: pointer;
-      color: orange;
-      margin-left: 10px;
-    }
-
-    /* ====== SECTIONS ====== */
-    section {
-      margin-top: 10px;
-      padding-top: 16px;
-      border-top: none;
-      display: none;
-    }
-
-    section.active {
-      display: block;
-      animation: fadeIn 0.35s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(3px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* headings used in content */
-    h2 {
-      font-size: 2em;
-      color: var(--text-color);
-      border-bottom: 1px solid var(--section-bg);
-      padding-bottom: 5px;
-      margin: 16px 0 18px 0;
-      text-align: center;
-    }
-    h3 { font-size: 1.5em; color: var(--text-color); margin: 18px 0 6px 0; text-align: left; }
-    h4 { font-size: 1.25em; color: var(--text-color); margin: 14px 0 4px 0; text-align: left; }
-    h5 { font-size: 1.1em; font-weight: normal; color: var(--text-color); margin: 12px 0 4px 0; text-align: left; }
-
-    /* ====== HOME LAYOUT (FIXED GAPS + RESPONSIVE) ====== */
-    .biography {
-      display: grid;
-      grid-template-columns: minmax(240px, 350px) 1fr;
-      gap: clamp(16px, 3vw, 40px);
-      align-items: start;
-      margin: 0;
-      padding: 0;
-    }
-
-    .bio-left { margin: 0; padding: 0; }
-
+    /* RESPONSIVE IMAGE FIX */
     .profile-pic-wrapper {
-      width: 100%;
-      max-width: 350px;
-
-      /* keep a consistent shape without forcing huge height on small screens */
-      aspect-ratio: 7 / 11; /* close to your 350x550 look */
-      overflow: hidden;
-      margin: 0 auto;
-      border: 0px solid var(--header-border);
-    }
+  width: 350px;
+  max-width: 350px;
+  height: 550px;
+  overflow: hidden;           
+  margin: 0 auto;             
+  border: 0px solid var(--header-border);
+  align-self: flex-start;     
+}
     .profile-pic-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover;          
       object-position: center;
     }
 
-    .bio-right {
-      margin: 0;
-      padding: 0;
+    /* UPDATED: Smaller name */
+    h1 { 
+      font-size: 2.2em; 
+      margin: 0; 
+      color: var(--nav-text); 
+      font-weight: bold; 
+      text-align: center; 
+    } 
+    h2 { font-size: 2em; color: var(--text-color); border-bottom: 1px solid var(--section-bg); padding-bottom: 5px; margin-top: 20px; text-align: center; margin-bottom: 20px; }
+    h3 { font-size: 1.5em; color: var(--text-color); margin-top: 20px; text-align: left; }
+    h4 { font-size: 1.25em; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
+    h5 { font-size: 1.1em; font-weight: normal; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
+    h6 { font-size: 1.1em; font-weight: bold; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h7 { font-size: 1em; font-weight: normal; font-style: italic; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h8 { font-size: 1.1em; font-weight: normal; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h9 { font-size: 1.1em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h10 { font-size: 1.1em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    
+    h3 + h4 { margin-top: 5px; }
+    h3 { margin-bottom: 5px; }
+    .skills h3 { margin-bottom: 0; }
+    .skills ul { margin-top: 0; }    
+    p { margin:2px; padding:2px; }
+    div{ margin:2px; padding:2px; }
+    
+    ul { list-style-type: disc; padding-left: 40px; color: var(--text-color); margin-top: 5px; font-size: 1.1.1em; }
+    li { margin-bottom: 10px; text-indent: 0; font-size: 1.1.1em; }
+    a { color: var(--link-color); text-decoration: none; font-size: 1.1.1em; }
+    a:hover { text-decoration: underline; }
+    
+    .abs-intro { font-style: normal; color: var(--highlight-color); font-size: 1em; font-weight: bold;}
+    .abstract { 
+        font-style: italic; 
+        margin: 10px 0; 
+        background: var(--section-bg); 
+        padding: 10px; 
+        border-radius: 5px; 
+        color: var(--text-color); 
+        border-left: 4px solid var(--link-color); 
+        font-size: 1.1em; 
+    }
+    .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.1em; }
+    
+.pdf-link { 
+    background: var(--section-bg); 
+    padding: 4px 10px; 
+    border-radius: 5px; 
+    display: inline-block; 
+    margin: 3px; 
+    color: var(--text-color); 
+    border: 1px solid #ccc; 
+    font-size: 0.95em;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.pdf-link:hover {
+    background-color: #e2e8f0;
+    text-decoration: none;
+    color: #000;
+}
+[data-theme="dark"] .pdf-link:hover {
+    background-color: #2d3748; 
+    color: #fff;
+}
 
-      /* KEY: shift the home text downward (desktop/tablet) */
-      padding-top: var(--home-shift);
+    /* FOOTER STYLING */
+    footer { 
+        text-align: center; 
+        margin-top: auto;
+        font-size: 0.8em; 
+        color: var(--text-color); 
+        border-top: 1px solid var(--section-bg); 
+        padding: 20px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 
-    .passage {
-      margin: 0;
-      padding: 0;
-      font-size: 1.1em;
-    }
+    section { margin-top: 10px; padding-top: 20px; border-top: none; display: none; }
+    section.active { display: block; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* links/buttons block spacing */
-    .home-links {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .biography { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 20px; margin-top: 0; }
+    
+    /* Bio-left section */
+    .bio-left { 
+      text-align: center; 
     }
-
-    .pdf-link {
-      background: var(--section-bg);
-      padding: 6px 10px;
-      border-radius: 6px;
-      display: inline-block;
-      color: var(--text-color);
-      border: 1px solid #ccc;
-      font-size: 0.95em;
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease;
-      line-height: 1.1;
-    }
-    .pdf-link:hover {
-      background-color: #e2e8f0;
-      color: #000;
-      text-decoration: none;
-    }
-    [data-theme="dark"] .pdf-link:hover {
-      background-color: #2d3748;
-      color: #fff;
-    }
-
-    .abs-intro {
-      font-style: normal;
-      color: var(--highlight-color);
-      font-size: 1em;
-      font-weight: bold;
-    }
-
-    .abstract {
-      font-style: italic;
-      margin: 10px 0;
-      background: var(--section-bg);
-      padding: 10px;
-      border-radius: 6px;
-      color: var(--text-color);
-      border-left: 4px solid var(--link-color);
-      font-size: 1.05em;
-    }
-
-    hr.subsection {
-      border: 0;
-      height: 1px;
-      background-color: #ccc;
-      margin: 12px 0 18px 0;
-    }
-
-    .indented { margin-left: 20px; }
-
-    /* ====== TEACHING / TABLE / REFERENCES (kept, lightly tightened) ====== */
+    
+    .bio-right { text-align: left; flex: 3; }  
+    #home .bio-right {
+          padding-top: 50px; /* adjust */
+        }
+    .passage { margin-bottom: 20px; font-size: 1.1em; }
+    .interests-education { display: flex; gap: 40px; }
+    .education { flex-basis: 50%; }
+    .skills { flex-basis: 50%; }
+    .education ul, .skills ul { list-style-type: none; padding-left: 0; }
+    .education li, .skills li { margin-bottom: 10px; }
+    
+    .education-entry { margin-bottom: 15px; font-size: 1.1em; }
+    .education-degree { font-weight: bold; margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; }
+    .education-degree i { margin-right: 8px; }
+    .degree-text { white-space: nowrap; }
+    .education-date { white-space: nowrap; }
+    .education-institution { margin-top: 0; }
+    
+    /* UPDATED TEACHING STYLES - More compact */
     .teaching-entry {
       margin-bottom: 18px;
       font-size: 1.1em;
       padding-bottom: 12px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #eee; 
     }
     .teaching-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
+      align-items: center;
       font-weight: bold;
-      margin-bottom: 4px;
+      font-size: 1.05em;
+      margin-bottom: 0;
     }
     .teaching-header h3 {
       margin: 0;
+      padding: 0;
       font-size: 1.3em;
     }
     .teaching-role {
       font-style: italic;
-      margin: 2px 0;
+      margin-top: 2px;
+      margin-bottom: 2px;
       line-height: 1.3;
     }
     .teaching-course {
-      margin: 2px 0 6px 0;
+      margin-top: 2px;
+      margin-bottom: 5px;
       line-height: 1.3;
       font-weight: 500;
     }
     .teaching-evaluations {
-      margin-top: 6px;
+      margin-top: 5px;
       font-size: 0.95em;
-      line-height: 1.7;
-      color: var(--text-color);
+      line-height: 1.8; 
+      color: var(--text-color); 
     }
-
-    table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+    
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--section-bg); word-wrap: break-word; }
     th { background: var(--section-bg); }
-
-    .award-entry {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      margin: 8px 0;
-      font-size: 1em;
-    }
-    .award-date { white-space: nowrap; font-weight: bold; }
-
+    
+    hr.subsection { border: 0; height: 1px; background-color: #ccc; margin-top: 10px; margin-bottom: 20px; } 
+    .indented { margin-left: 20px; }
+    strong { font-weight: bold; }
+    .skills ul { padding-left: 0; list-style-type: none; }
+    .skills li { text-indent: 0; margin-bottom: 5px; }
+    .award-entry { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1em; }
+    .award-name { flex: 1; font-weight: bold; }
+    .award-date { text-align: right; white-space: nowrap; font-size: 1em; color: var(--text-color); font-weight: bold; }
+    
     .references-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
+      margin-top: 20px;
     }
     .reference {
-      background-color: var(--section-bg);
-      padding: 14px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      background-color: var(--section-bg); 
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     }
-    .reference p { margin: 6px 0; }
-
-    /* ====== FOOTER ====== */
-    footer {
-      text-align: center;
-      margin-top: auto;
-      font-size: 0.85em;
-      color: var(--text-color);
-      border-top: 1px solid var(--section-bg);
-      padding: 14px 10px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .reference p {
+      margin: 5px 0; 
     }
-    footer p {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .indented strong::after {
+      content: attr(data-label);
+      font-weight: normal; 
+      margin-left: 5px; 
     }
 
-    /* ====== RESPONSIVE BREAKPOINTS ====== */
-    @media (max-width: 900px) {
-      h1 { font-size: 1.75em; }
-
-      nav {
-        font-size: 1rem;
-        gap: 6px 14px;
-      }
-
-      .references-grid { grid-template-columns: 1fr; }
-
-      /* KEY: remove the down-shift on smaller screens to avoid empty space */
-      .bio-right { padding-top: 0; }
-
-      /* slightly smaller image on tablets to keep everything tight */
-      .profile-pic-wrapper { max-width: 320px; }
+    /* RESPONSIVE STYLES */
+    @media (max-width: 900px) { 
+        .biography { flex-direction: column; align-items: center; } 
+        .interests-education { flex-direction: column; } 
+        .references-grid { grid-template-columns: 1fr; } 
+        h1 { font-size: 1.8em; text-align: center; margin-bottom: 5px;}
+        header { 
+          flex-direction: column; 
+          margin-left: 0;
+          margin-right: 0;
+          padding: 8px 10px 6px 10px;
+        }
+        nav { 
+          text-align: center; 
+          margin-top: 4px; 
+          font-size: 1rem;
+          gap: 4px 15px;
+        }
+        body { 
+          padding: 10px;
+          font-size: 1.1em;
+        }
+        .abstract, .passage, ul { 
+          font-size: 1.1em; 
+          padding-left: 20px;
+        }
+        
+        .header-social-icons {
+          top: 8px;
+          right: 15px;
+          gap: 10px;
+        }
+        .header-social-icons a {
+          font-size: 1.1em;
+        }
     }
 
-    @media (max-width: 600px) {
-      body { font-size: 1.05em; }
-
-      /* stack the home layout */
-      .biography {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .profile-pic-wrapper {
+    /* Small screens (phones) */
+    @media (max-width: 600px) { 
+      .profile-pic-wrapper { 
+        width: 100%;
         max-width: 280px;
-        margin: 0 auto;
+        height: auto;
+        aspect-ratio: 5/6;
       }
-
-      /* keep buttons neat */
-      .home-links {
-        justify-content: center;
+      h1 { font-size: 1.5em; }
+      h3, h4 { 
+        font-size: 1.25em; 
+        margin-left: 0;
+        text-align: center; 
       }
-
+      .teaching-header h3 {
+        font-size: 1.1em;
+      }
+      .biography, .interests-education { gap: 20px; }
+      .award-entry, .education-degree, .teaching-header { 
+        flex-direction: column;
+        align-items: flex-start; 
+        text-align: left; 
+      }
+      .award-date, .education-date { 
+        text-align: left; 
+        margin-top: 5px;
+      }
+      .pdf-link { 
+        display: inline-block;
+        margin: 3px; 
+        text-align: center; 
+      }
+      footer { padding: 10px; }
+      
       .header-social-icons {
         position: static;
         justify-content: center;
-        margin-bottom: 6px;
+        margin-bottom: 5px;
         order: -1;
       }
-      .header-social-icons a { font-size: 1.2em; }
-
-      nav { font-size: 0.95rem; gap: 6px 12px; }
-
-      .teaching-header {
-        flex-direction: column;
-        align-items: flex-start;
+      .header-social-icons a {
+        font-size: 1.2em;
       }
-
-      .award-entry {
-        flex-direction: column;
-        align-items: flex-start;
+      
+      nav {
+        gap: 3px 12px;
+        font-size: 0.95rem;
       }
     }
 
     @media print {
-      @page { size: landscape; }
+      @page {
+        size: landscape;
+      }
     }
+    
+    .biography > div {  /* Targets bio-left and bio-right */
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .bio-left img {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bio-right .passage {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .bio-right .passage p:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      line-height: 1.4;  /* Adjust this value if needed for optical alignment */
+    }
+
+    h9 {
+      margin-top: 0 !important;  /* Override any existing margins on h9 */
+    }
+    
   </style>
 </head>
-
-<body data-theme="light">
+<body data-theme="light"> 
   <header>
     <div class="header-social-icons">
-      <a href="mailto:aghosh4@huskers.unl.edu" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/aghosh4/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/Ghosh-Anupam" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      <a href="https://x.com/ghosh2397" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:aghosh4@huskers.unl.edu" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a> 
+      <a href="https://www.linkedin.com/in/aghosh4/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>  
+      <a href="https://github.com/Ghosh-Anupam" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>  
+      <a href="https://x.com/ghosh2397" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a> 
     </div>
-
     <h1>Anupam Ghosh</h1>
-
     <nav>
       <a href="#home">Home</a>
       <a href="#research">Research</a>
@@ -450,8 +471,6 @@
       <a href="#contact">References</a>
     </nav>
   </header>
-
-  <!-- HOME -->
   <section id="home" class="active">
     <div class="biography">
       <div class="bio-left">
@@ -459,100 +478,193 @@
           <img src="profile.png" alt="Anupam Ghosh">
         </div>
       </div>
-
       <div class="bio-right">
         <div class="passage">
-          <p><strong>Welcome!</strong> I am a PhD candidate in Economics at the University of Nebraska-Lincoln. My research fields span Public,
+          <h9>
+          <p> 
+            <strong>Welcome!</strong> I am a PhD candidate in Economics at the University of Nebraska-Lincoln. My research fields span Public, 
             Environmental, Labor, and Development Economics, and I bring nearly a decade of teaching experience across diverse institutions and multiple modalities.
-          </p>
-
-          <p><strong>I am on the 2025-2026 job market.</strong></p>
-
-          <p>
-            My job market paper implements a Multiple Event Study specification to provide the <strong>first estimates</strong> of the long-run effects of
-            hurricanes on county-level crime rates. I find that while minor hurricanes have little effect on crime,
-            major hurricanes increase property crime rates by 8.5% in the decade following exposure, with effect sizes being 5× and 2.5× larger, for poorer and
-            less disaster-experienced counties, respectively. I associate these effects to the short-term selective outmigration of wealthier
+        </p>
+        <p>
+            <strong>
+            I am on the 2025-2026 job market.
+            </strong>
+        </p>
+        <p>
+            My job market paper, implements a Multiple Event Study specification to provide the <strong>first estimates</strong> of the long-run effects of 
+            hurricanes on county-level crime rates. I find that while minor hurricanes have little effect on crime, 
+            major hurricanes increase property crime rates by 8.5% in the decade following exposure, with effect sizes being 5× and 2.5× larger, for poorer and 
+            less disaster-experienced counties, respectively. I associate these effects to the short-term selective outmigration of wealthier 
             residents and long-term declines in per-capita income.
-          </p>
+        </p>
+        
+        <p>
+          Got questions about my application, teaching, or research? Want to collaborate? Reach out to me at: <a href="mailto:aghosh4@huskers.unl.edu"><h8>aghosh4@huskers.unl.edu</h8></a> or <a href="mailto:ghoshanupam34@outlook.com"><h8>ghoshanupam34@outlook.com</h8></a>.
+        </p>
+        </h9>
 
-          <p>
-            Got questions about my application, teaching, or research? Want to collaborate? Reach out to me at:
-            <a href="mailto:aghosh4@huskers.unl.edu">aghosh4@huskers.unl.edu</a> or
-            <a href="mailto:ghoshanupam34@outlook.com">ghoshanupam34@outlook.com</a>.
-          </p>
-
-          <div class="home-links">
-            <a href="https://drive.google.com/file/d/1cl7sz5z37Dui1OrKEauYstFm9k_lMxtd/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">CV</a>
-            <a href="https://drive.google.com/file/d/16OFpmkrjoLO9WW2-1xGdZut7l0jIuHFx/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Resume</a>
-            <a href="https://drive.google.com/file/d/1ePlDPK4-_g51_OtdVoU-IAHznFgGi77f/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Job Market Paper</a>
-            <a href="https://drive.google.com/file/d/1ivLkXIWvnln5_5eveoDRPFGlwyWyURON/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Research Statement</a>
-            <a href="https://drive.google.com/file/d/1WIEzpAeOo4E3PxWqers7opEiqybexR-t/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Teaching Statement</a>
-          </div>
+        <div style="margin-top: 25px;">
+                  <a href="https://drive.google.com/file/d/1cl7sz5z37Dui1OrKEauYstFm9k_lMxtd/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">CV</a> 
+                  <a href="https://drive.google.com/file/d/16OFpmkrjoLO9WW2-1xGdZut7l0jIuHFx/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Resume</a> 
+                  <a href="https://drive.google.com/file/d/1ePlDPK4-_g51_OtdVoU-IAHznFgGi77f/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Job Market Paper</a> 
+                  <a href="https://drive.google.com/file/d/1ivLkXIWvnln5_5eveoDRPFGlwyWyURON/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Research Statement</a>
+                  <a href="https://drive.google.com/file/d/1WIEzpAeOo4E3PxWqers7opEiqybexR-t/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Teaching Statement</a>
         </div>
-      </div>
-    </div>
+  </div>
   </section>
-
-  <!-- RESEARCH (kept as-is from your original; paste the rest of your content below) -->
   <section id="research">
     <h3>Research Fields</h3>
     <h5><p class="indented"><strong>Primary:</strong> Public and Environmental Economics<br><strong>Secondary:</strong> Labor and Development Economics</p></h5>
     <hr class="subsection">
-
     <h3>Job Market Paper</h3>
     <h4>Do Storms Bring Crime? Evidence from US Counties</h4>
-
     <div class="abstract">
-      <div class="abs-intro">Abstract:</div>
-      Little causal evidence exists regarding the long-term impacts of natural disasters on crime...
-    </div>
-
-    <p>
-      <a href="https://drive.google.com/file/d/1ePlDPK4-_g51_OtdVoU-IAHznFgGi77f/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Paper</a>
-      <a href="https://drive.google.com/file/d/1liwb7MjprHnaXj0duhC9J4nC1PY0j6CK/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Slides</a>
-    </p>
+     <div class="abs-intro"> Abstract: </div> Little causal evidence exists regarding the long-term impacts of natural disasters on crime. Using a balanced panel of county-level crime data spanning 1980–2020, this paper estimates the short- and long-term effects of hurricanes of varying intensities affecting U.S. counties between 1990 and 2010. Findings reveal that, while minor hurricanes produce marginal effects on crime, major hurricanes cause significant increases in incidents of property crime. In the decade following exposure to major hurricanes, property crime rates increase by 8.5% relative to the baseline mean, thereby imposing an estimated per-capita social cost of $120 on treated counties. This unequal impact of stronger hurricanes is largely driven by evacuation orders and selective out-migration in the short term, and by declining per-capita incomes in the long term. I also find that hurricane effects are disproportionately larger for less-prepared and poorer counties, which, on average, risk losing 1.4% and 2.2% of per-capita GDP, respectively, due to hurricane-induced crimes. Heterogeneity analysis reveals that, while post-hurricane crime increases are greater in areas with smaller minority populations, arrest rates for minorities far exceed those for white individuals. Overall, the findings underline the need for greater resource allocation toward vulnerable communities and increased investment in disaster resilience measures to mitigate the economic and social consequences of climate change.
+    </div>   
+        <p>
+            <a href="https://drive.google.com/file/d/1ePlDPK4-_g51_OtdVoU-IAHznFgGi77f/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Paper</a> 
+            <a href="https://drive.google.com/file/d/1liwb7MjprHnaXj0duhC9J4nC1PY0j6CK/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer">Slides</a>
+        </p>
     <hr class="subsection">
-    <!-- paste the rest of your Research section content here -->
+    <h3>Work In Progress</h3>
+    <h4>Mandatory Evacuation Orders: A Path to Crime?</h4>
+    <ul><h9>
+      <li>Analyze how evacuation orders influence crime in the immediate aftermath of hurricanes.</li>
+      <li>Compare crime effects under mandatory vs. voluntary evacuation orders.</li>
+      </h9>
+    </ul>
+    <h4>Hurricanes, Migration and Crime</h4>
+    <ul><h9>
+      <li>Examine the effect of hurricanes on migration flows by utilizing the IRS's migration flow data.</li>
+      <li>Provide new evidence on the effect of hurricane-induced migrants on the crime landscape of receiving counties.</li>
+    </h9></ul>
+    <h4>Gender of the Firstborn and Maternal Victimization</h4>
+    <ul><h9>
+      <li>Using DHS data from India, I explore the role of the sex of the firstborn child on mother's domestic violence experience.</li>
+      <li>To explore possible mechanisms, I also look at father's reported gender attitude.</li>
+      </h9></ul>
+    <hr class="subsection">
+    <h3>Presentations</h3>
+    <div class="award-entry">
+      <div class="award-name"><strong>Midwest Applied Microeconomics Workshop</strong>, <h7>University of Missouri</h7></div>
+      <div class="award-date"><strong>2025</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Half Baked Seminar</strong>, <h7>University of Nebraska-Lincoln</h7></div>
+      <div class="award-date"><strong>2024</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Economics Departmental Seminar</strong>, <h7>University of Arkansas-Fayetteville</h7></div>
+      <div class="award-date"><strong>2019</strong></div>
+    </div>
+    <hr class="subsection">
+    <h3>Conferences & Workshops</h3>
+    <div class="award-entry">
+      <div class="award-name"><strong>Causal Inference Workshop</strong>, <h7>Arnold Ventures</h7></div>
+      <div class="award-date"><strong>2025</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Nebraska Labor Summit</strong>, <h7>University of Nebraska-Lincoln</h7></div>
+      <div class="award-date"><strong>2022-2024</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Ganga Padma Devising Seminar</strong>, <h7>Observer Research Foundation</h7></div>
+      <div class="award-date"><strong>2017</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Sustainable Development in Sunderban</strong>, <h7>Observer Research Foundation</h7></div>
+      <div class="award-date"><strong>2016</strong></div>
+    </div>
+    <hr class="subsection">
   </section>
-
   <section id="teaching">
-    <!-- paste your Teaching section here (your original content will work) -->
-  </section>
-
+        <div class="teaching-entry">
+          <div class="teaching-header">
+            <span><h3>Instructor of Record</h3></span>
+            <span>2022 - Present</span>
+          </div>
+          <div class="teaching-role">University of Nebraska-Lincoln</div>
+          <div class="teaching-course">Principles of Macroeconomics & Spreadsheet Analytics</div>
+           
+          <div class="teaching-evaluations">
+            <h8>Certification:</h8> 
+            <a href="https://drive.google.com/file/d/17FExMI2YnRMXWoXJWx0OEeRv0PNUeN8B/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">PhD Teaching Certificate</a> 
+          </div>
+          <div class="teaching-evaluations">
+            <h8>Sample Teaching Syllabus:</h8> 
+            <a href="https://drive.google.com/file/d/1QkYQTCdSxMH8sZ29a4pCJ6hXKeMbAm2v/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Principles of Macroeconomics</a> 
+            <a href="https://drive.google.com/file/d/1Sr6EiJ_0fk4f8U35Mmdkx4Qr6WllFRAk/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Spreadsheet Analytics</a> 
+          </div>       
+          <div class="teaching-evaluations">
+            <h8>Evaluations:</h8> 
+            <a href="https://drive.google.com/file/d/17PtoxKyiHBNzKvktS9R-6JrbOrih9_Ht/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Summer 2022</a>
+            <a href="https://drive.google.com/file/d/17EO-PLsw8KYgDykGt0qXE8pZSH3533Oh/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Fall 2022</a>
+            <a href="https://drive.google.com/file/d/1IXzq99fVGln0ATLYheLJ4J_U8pkkGKcR/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Summer 2023</a> 
+            <a href="https://drive.google.com/file/d/13vHvYNRJKP4haFTiOxNtxFdVoVaS6Tca/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Spring 2024</a> 
+         </div>
+        </div>
+        
+        <div class="teaching-entry">
+          <div class="teaching-header">
+            <span><h3>Teaching Assistant</h3></span>
+            <span>2020 - 2021</span>
+          </div>
+          <div class="teaching-role">University of Nebraska-Lincoln</div>
+          <div class="teaching-course">Principles of Microeconomics & Intermediate Microeconomics</div>
+        </div>
+        
+        <div class="teaching-entry">
+          <div class="teaching-header">
+            <span><h3>Instructor of Record</h3></span>
+            <span>2019 - 2020</span>
+          </div>
+          <div class="teaching-role">University of Arkansas-Fayetteville</div>
+          <div class="teaching-course">Essentials of Economics</div>
+          <div class="teaching-evaluations">
+            <h8>Evaluations:</h8> 
+            <a href="https://drive.google.com/file/d/1WvYzPpuO-JHcZd0XgoNjYxiupmPC7qSP/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Fall 2019</a>
+            <a href="https://drive.google.com/file/d/1Kw_E9HouM3qbeYXFgHv0kG6hVNrOOvnv/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Spring 2020</a>
+          </div>
+        </div>
+        
+        <div class="teaching-entry">
+          <div class="teaching-header">
+            <span><h3>Guest Lecturer</h3></span>
+            <span>2016 - 2017</span>
+          </div>
+          <div class="teaching-role">Asutosh College, Kolkata, India</div>
+          <div class="teaching-course">Micro and Macro Economics, Statistics, & Indian Economic History</div>
+        </div>
+      </section>
   <section id="contact">
     <div class="references-grid">
       <div class="reference">
-        <p><strong>Dr. Daniel Tannenbaum (Chair)</strong></p>
+        <p><strong>Dr. Daniel Tannenbaum (Chair)</strong></p>         
         <p>Georgia and Jim Thompson</p>
         <p>Associate Professor</p>
         <p>Department of Economics</p>
         <p>University of Nebraska-Lincoln</p>
-        <p><a href="mailto:dtannenbaum@unl.edu" target="_blank" rel="noopener noreferrer">dtannenbaum@unl.edu</a></p>
+        <p><a href="mailto:dtannenbaum@unl.edu" target="_blank" rel="noopener noreferrer">dtannenbaum@unl.edu</a></p>       
       </div>
-
       <div class="reference">
         <p><strong>Dr. Brenden Timpe</strong></p>
         <p>Assistant Professor</p>
         <p>Department of Economics</p>
         <p>University of Nebraska-Lincoln</p>
-        <p><a href="mailto:btimpe@unl.edu" target="_blank" rel="noopener noreferrer">btimpe@unl.edu</a></p>
+      <p><a href="mailto:btimpe@unl.edu" target="_blank" rel="noopener noreferrer">btimpe@unl.edu</a></p>       
       </div>
-
       <div class="reference">
         <p><strong>Dr. Yifan Gong</strong></p>
         <p>Assistant Professor</p>
         <p>Department of Economics</p>
         <p>University of Nebraska-Lincoln</p>
-        <p><a href="mailto:ygong5@unl.edu" target="_blank" rel="noopener noreferrer">ygong5@unl.edu</a></p>
-      </div>
+        <p><a href="mailto:ygong5@unl.edu" target="_blank" rel="noopener noreferrer">ygong5@unl.edu</a></p>       
     </div>
+  </div>
   </section>
-
   <footer>
-    <p>Click here to switch themes <button class="toggle-btn" onclick="toggleTheme()">☀️</button></p>
+    <p>Click here to switch themes<button class="toggle-btn" onclick="toggleTheme()">☀️</button></p>
   </footer>
-
   <script>
     function toggleTheme() {
       const body = document.body;
@@ -563,15 +675,19 @@
     }
 
     const sections = document.querySelectorAll('section');
-
     function showSection(hash) {
       sections.forEach(sec => sec.classList.remove('active'));
       const target = document.querySelector(hash || '#home');
-      if (target) target.classList.add('active');
+      if (target) {
+        target.classList.add('active');
+      }
     }
-
-    window.addEventListener('hashchange', () => showSection(location.hash));
-    document.addEventListener('DOMContentLoaded', () => showSection(location.hash));
+    window.addEventListener('hashchange', () => {
+      showSection(location.hash);
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection(location.hash);
+    });
   </script>
 </body>
 </html>
