@@ -15,9 +15,9 @@
   <style>
     :root {
       --bg-color: #16191b; 
-      --text-color: #FFFFF0 ; 
+      --text-color: #fffbf1 ; 
       --nav-bg: #16191b; 
-      --nav-text: #FFFFF0 ; 
+      --nav-text: #fffbf1 ; 
       --header-border: #16191b;
       --section-bg: #16191b;
       --highlight-bg: #63b3ed; 
@@ -25,13 +25,13 @@
       --highlight-color: #f7eece ;
     }
     [data-theme="light"] {
-      --bg-color:   #FFFFF0 ; 
+      --bg-color:   #fffbf1 ; 
       --text-color: #3B444B;
       --nav-bg: #002147; 
-      --nav-text: #FFFFF0 ; 
+      --nav-text: hsl(60, 11%, 87%) ; 
       --header-border: #002147;
-      --section-bg: #FFFFF0;
-      --highlight-bg: #FFFFF0;
+      --section-bg: #fffbf1;
+      --highlight-bg: #fffbf1;
       --link-color: #014083;
       --highlight-color: #480607 ;
     }
@@ -133,15 +133,14 @@
 
     /* RESPONSIVE IMAGE FIX */
     .profile-pic-wrapper {
-      width: 350px;
-      max-width: 350px;
-      height: 500px;
-      aspect-ratio: 5/6;          
-      overflow: hidden;           
-      margin: 0 auto;             
-      border: 0px solid var(--header-border);
-      align-self: flex-start;     
-    }
+  width: 350px;
+  max-width: 350px;
+  height: 550px;
+  overflow: hidden;           
+  margin: 0 auto;             
+  border: 0px solid var(--header-border);
+  align-self: flex-start;     
+}
     .profile-pic-wrapper img {
       width: 100%;
       height: 100%;
@@ -234,7 +233,7 @@
         gap: 10px;
     }
 
-    section { margin-top: 10px; padding-top: 10px; border-top: none; display: none; }
+    section { margin-top: 10px; padding-top: 20px; border-top: none; display: none; }
     section.active { display: block; animation: fadeIn 0.5s; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
