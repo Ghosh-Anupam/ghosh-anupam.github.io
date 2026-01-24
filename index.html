@@ -61,27 +61,28 @@
         text-align: justify;
     }
 
-    /* UPDATED HEADER - Centered name with nav below */
+    /* UPDATED HEADER - Compact and contained */
     header { 
       display: flex; 
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: var(--nav-text); 
-      padding: 20px 20px 15px 20px; 
+      padding: 12px 20px 10px 20px;
       margin-bottom: 0; 
       position: relative; 
       z-index: 1; 
-      margin-top: -20px;
-      margin-left: -20px;
-      margin-right: -20px;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      background: var(--nav-bg);
     }
     
     /* Social icons in top right of header */
     .header-social-icons {
       position: absolute;
-      top: 20px;
-      right: 30px;
+      top: 12px;
+      right: 20px;
       display: flex;
       gap: 15px;
       z-index: 10;
@@ -93,16 +94,6 @@
     .header-social-icons a:hover { 
       color: var(--link-color); 
     }
-    header::before { 
-      content: ''; 
-      position: absolute; 
-      top: 0; 
-      left: calc(50% - 50vw); 
-      width: 100vw; 
-      height: 100%; 
-      background: var(--nav-bg); 
-      z-index: -1; 
-    }
 
     /* UPDATED NAV - Centered below name, no slashes */
     nav { 
@@ -110,7 +101,7 @@
         padding: 0; 
         text-align: center; 
         font-size: 1.2rem; 
-        margin-top: 10px;
+        margin-top: 8px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -149,7 +140,7 @@
 
     /* UPDATED: Name centered */
     h1 { 
-      font-size: 3em; 
+      font-size: 2.8em; 
       margin: 0; 
       color: var(--nav-text); 
       font-weight: bold; 
@@ -258,27 +249,34 @@
     .education-date { white-space: nowrap; }
     .education-institution { margin-top: 0; }
     
+    /* UPDATED TEACHING STYLES - More compact */
     .teaching-entry {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-size: 1.1em;
-      padding-bottom: 15px;
+      padding-bottom: 12px;
       border-bottom: 1px solid #eee; 
     }
     .teaching-header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-weight: bold;
       font-size: 1.05em;
-      margin-bottom: 2px; 
+      margin-bottom: 0;
+    }
+    .teaching-header h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.3em;
     }
     .teaching-role {
       font-style: italic;
-      margin-top: 0px; 
+      margin-top: 2px;
       margin-bottom: 2px;
       line-height: 1.3;
     }
     .teaching-course {
-      margin-top: 0px;
+      margin-top: 2px;
       margin-bottom: 5px;
       line-height: 1.3;
       font-weight: 500;
@@ -332,13 +330,11 @@
         h1 { font-size: 2em; text-align: center; margin-bottom: 10px;}
         header { 
           flex-direction: column; 
-          margin-left: 0;
-          margin-right: 0;
-          padding: 15px 10px;
+          padding: 12px 10px;
         }
         nav { 
           text-align: center; 
-          margin-top: 10px; 
+          margin-top: 8px; 
           font-size: 1rem;
           gap: 5px 15px;
         }
@@ -352,7 +348,7 @@
         }
         
         .header-social-icons {
-          top: 15px;
+          top: 12px;
           right: 15px;
           gap: 10px;
         }
@@ -374,6 +370,9 @@
         font-size: 1.25em; 
         margin-left: 0;
         text-align: center; 
+      }
+      .teaching-header h3 {
+        font-size: 1.15em;
       }
       .biography, .interests-education { gap: 20px; }
       .award-entry, .education-degree, .teaching-header { 
