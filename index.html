@@ -61,28 +61,39 @@
         text-align: justify;
     }
 
-    /* UPDATED HEADER - Compact and contained */
+    /* UPDATED HEADER - Full width but shorter height */
     header { 
       display: flex; 
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: var(--nav-text); 
-      padding: 12px 20px 10px 20px;
+      padding: 8px 20px 6px 20px;
       margin-bottom: 0; 
       position: relative; 
       z-index: 1; 
-      margin-top: 0;
-      margin-left: 0;
-      margin-right: 0;
-      background: var(--nav-bg);
+      margin-top: -5px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+    
+    /* Full-width background */
+    header::before { 
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      left: calc(50% - 50vw); 
+      width: 100vw; 
+      height: 100%; 
+      background: var(--nav-bg); 
+      z-index: -1; 
     }
     
     /* Social icons in top right of header */
     .header-social-icons {
       position: absolute;
-      top: 12px;
-      right: 20px;
+      top: 10px;
+      right: 30px;
       display: flex;
       gap: 15px;
       z-index: 10;
@@ -95,24 +106,24 @@
       color: var(--link-color); 
     }
 
-    /* UPDATED NAV - Centered below name, no slashes */
+    /* UPDATED NAV - Tighter spacing */
     nav { 
         background: none; 
         padding: 0; 
         text-align: center; 
-        font-size: 1.2rem; 
-        margin-top: 8px;
+        font-size: 1.1rem;
+        margin-top: 4px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px 25px;
+        gap: 4px 20px;
     }
     nav a { 
         color: var(--nav-text); 
         text-decoration: none; 
         font-weight: bold; 
         white-space: nowrap;
-        padding: 5px 0;
+        padding: 3px 0;
     } 
     nav a:hover { text-decoration: underline; }
     
@@ -138,9 +149,9 @@
       object-position: center;
     }
 
-    /* UPDATED: Name centered */
+    /* UPDATED: Smaller name */
     h1 { 
-      font-size: 2.8em; 
+      font-size: 2.2em; 
       margin: 0; 
       color: var(--nav-text); 
       font-weight: bold; 
@@ -327,16 +338,18 @@
         .biography { flex-direction: column; align-items: center; } 
         .interests-education { flex-direction: column; } 
         .references-grid { grid-template-columns: 1fr; } 
-        h1 { font-size: 2em; text-align: center; margin-bottom: 10px;}
+        h1 { font-size: 1.8em; text-align: center; margin-bottom: 5px;}
         header { 
           flex-direction: column; 
-          padding: 12px 10px;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 8px 10px 6px 10px;
         }
         nav { 
           text-align: center; 
-          margin-top: 8px; 
+          margin-top: 4px; 
           font-size: 1rem;
-          gap: 5px 15px;
+          gap: 4px 15px;
         }
         body { 
           padding: 10px;
@@ -348,7 +361,7 @@
         }
         
         .header-social-icons {
-          top: 12px;
+          top: 8px;
           right: 15px;
           gap: 10px;
         }
@@ -365,7 +378,7 @@
         height: auto;
         aspect-ratio: 5/6;
       }
-      h1 { font-size: 1.75em; }
+      h1 { font-size: 1.5em; }
       h3, h4 { 
         font-size: 1.25em; 
         margin-left: 0;
@@ -394,7 +407,7 @@
       .header-social-icons {
         position: static;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         order: -1;
       }
       .header-social-icons a {
