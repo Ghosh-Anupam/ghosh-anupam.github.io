@@ -133,14 +133,14 @@
 
     /* RESPONSIVE IMAGE FIX */
     .profile-pic-wrapper {
-  width: 350px;
-  max-width: 350px;
-  height: 550px;
-  overflow: hidden;           
-  margin: 0 auto;             
-  border: 0px solid var(--header-border);
-  align-self: flex-start;     
-}
+      width: 350px;
+      max-width: 350px;
+      height: 550px;
+      overflow: hidden;           
+      margin: 0 auto;             
+      border: 0px solid var(--header-border);
+      align-self: flex-start;     
+    }
     .profile-pic-wrapper img {
       width: 100%;
       height: 100%;
@@ -173,9 +173,9 @@
     p { margin:2px; padding:2px; }
     div{ margin:2px; padding:2px; }
     
-    ul { list-style-type: disc; padding-left: 40px; color: var(--text-color); margin-top: 5px; font-size: 1.1.1em; }
-    li { margin-bottom: 10px; text-indent: 0; font-size: 1.1.1em; }
-    a { color: var(--link-color); text-decoration: none; font-size: 1.1.1em; }
+    ul { list-style-type: disc; padding-left: 40px; color: var(--text-color); margin-top: 5px; font-size: 1.1em; }
+    li { margin-bottom: 10px; text-indent: 0; font-size: 1.1em; }
+    a { color: var(--link-color); text-decoration: none; font-size: 1.1em; }
     a:hover { text-decoration: underline; }
     
     .abs-intro { font-style: normal; color: var(--highlight-color); font-size: 1em; font-weight: bold;}
@@ -191,27 +191,28 @@
     }
     .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.1em; }
     
-.pdf-link { 
-    background: var(--section-bg); 
-    padding: 4px 10px; 
-    border-radius: 5px; 
-    display: inline-block; 
-    margin: 3px; 
-    color: var(--text-color); 
-    border: 1px solid #ccc; 
-    font-size: 0.95em;
-    text-decoration: none;
-    transition: background 0.2s;
-}
-.pdf-link:hover {
-    background-color: #e2e8f0;
-    text-decoration: none;
-    color: #000;
-}
-[data-theme="dark"] .pdf-link:hover {
-    background-color: #2d3748; 
-    color: #fff;
-}
+    .pdf-link { 
+        background: var(--section-bg); 
+        padding: 4px 10px; 
+        border-radius: 5px; 
+        display: inline-block; 
+        margin: 3px; 
+        color: var(--text-color); 
+        border: 1px solid #ccc; 
+        font-size: 0.95em;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+    .pdf-link:hover {
+        background-color: #e2e8f0;
+        text-decoration: none;
+        color: #000;
+    }
+    [data-theme="dark"] .pdf-link:hover {
+        background-color: #2d3748; 
+        color: #fff;
+    }
 
     /* FOOTER STYLING */
     footer { 
@@ -246,8 +247,8 @@
     
     .bio-right { text-align: left; flex: 3; }  
     #home .bio-right {
-          padding-top: 50px; /* adjust */
-        }
+      padding-top: 50px;
+    }
     .passage { margin-bottom: 20px; font-size: 1.1em; }
     .interests-education { display: flex; gap: 40px; }
     .education { flex-basis: 50%; }
@@ -262,43 +263,61 @@
     .education-date { white-space: nowrap; }
     .education-institution { margin-top: 0; }
     
-    /* UPDATED TEACHING STYLES - More compact */
-    .teaching-entry {
-      margin-bottom: 18px;
-      font-size: 1.1em;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #eee; 
+    /* NEW TEACHING STYLES - Institution-based layout */
+    .teaching-institution {
+      margin-bottom: 35px;
     }
-    .teaching-header {
+    .institution-name {
+      font-size: 1.4em;
+      margin-bottom: 0;
+      margin-top: 10px;
+      color: var(--text-color);
+    }
+    .institution-line {
+      border: none;
+      height: 2px;
+      background-color: var(--link-color);
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    .course-entry {
+      margin-bottom: 18px;
+      padding-left: 10px;
+    }
+    .course-info {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-      font-size: 1.05em;
-      margin-bottom: 0;
-    }
-    .teaching-header h3 {
-      margin: 0;
-      padding: 0;
-      font-size: 1.3em;
-    }
-    .teaching-role {
-      font-style: italic;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      line-height: 1.3;
-    }
-    .teaching-course {
-      margin-top: 2px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 5px;
-      line-height: 1.3;
-      font-weight: 500;
     }
-    .teaching-evaluations {
-      margin-top: 5px;
+    .course-title {
+      font-size: 1.05em;
+      flex: 1;
+      min-width: 250px;
+    }
+    .course-semesters {
+      font-size: 1em;
+      color: var(--text-color);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .course-description {
+      font-style: italic;
       font-size: 0.95em;
-      line-height: 1.8; 
-      color: var(--text-color); 
+      color: var(--text-color);
+      opacity: 0.85;
+      margin: 5px 0 8px 0;
+      padding-left: 5px;
+    }
+    .course-materials {
+      margin-top: 8px;
+      font-size: 0.95em;
+    }
+    .material-label {
+      font-weight: bold;
+      margin-right: 5px;
     }
     
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -370,6 +389,15 @@
         .header-social-icons a {
           font-size: 1.1em;
         }
+        
+        .course-info {
+          flex-direction: column;
+          gap: 3px;
+        }
+        .course-semesters {
+          text-align: left;
+          white-space: normal;
+        }
     }
 
     /* Small screens (phones) */
@@ -386,11 +414,12 @@
         margin-left: 0;
         text-align: center; 
       }
-      .teaching-header h3 {
-        font-size: 1.1em;
+      .institution-name {
+        font-size: 1.2em;
+        text-align: center;
       }
       .biography, .interests-education { gap: 20px; }
-      .award-entry, .education-degree, .teaching-header { 
+      .award-entry, .education-degree { 
         flex-direction: column;
         align-items: flex-start; 
         text-align: left; 
@@ -420,6 +449,10 @@
         gap: 3px 12px;
         font-size: 0.95rem;
       }
+      
+      .course-entry {
+        padding-left: 0;
+      }
     }
 
     @media print {
@@ -428,7 +461,7 @@
       }
     }
     
-    .biography > div {  /* Targets bio-left and bio-right */
+    .biography > div {
       margin-top: 0;
       padding-top: 0;
     }
@@ -446,11 +479,11 @@
     .bio-right .passage p:first-child {
       margin-top: 0;
       padding-top: 0;
-      line-height: 1.4;  /* Adjust this value if needed for optical alignment */
+      line-height: 1.4;
     }
 
     h9 {
-      margin-top: 0 !important;  /* Override any existing margins on h9 */
+      margin-top: 0 !important;
     }
     
   </style>
@@ -510,7 +543,8 @@
                   <a href="https://drive.google.com/file/d/1ivLkXIWvnln5_5eveoDRPFGlwyWyURON/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer"><strong>Research Statement</strong></a>
                   <a href="https://drive.google.com/file/d/1WIEzpAeOo4E3PxWqers7opEiqybexR-t/view?usp=drive_link" class="pdf-link" download target="_blank" rel="noopener noreferrer"><strong>Teaching Statement</strong></a>
         </div>
-  </div>
+      </div>
+    </div>
   </section>
   <section id="research">
     <h3>Research Fields</h3>
@@ -577,65 +611,95 @@
     </div>
     <hr class="subsection">
   </section>
+  
   <section id="teaching">
-        <div class="teaching-entry">
-          <div class="teaching-header">
-            <span><h3>Instructor of Record</h3></span>
-            <span>2022 - Present</span>
-          </div>
-          <div class="teaching-role">University of Nebraska-Lincoln</div>
-          <div class="teaching-course">Principles of Macroeconomics & Spreadsheet Analytics</div>
-           
-          <div class="teaching-evaluations">
-            <h8>Certification:</h8> 
-            <a href="https://drive.google.com/file/d/17FExMI2YnRMXWoXJWx0OEeRv0PNUeN8B/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">PhD Teaching Certificate</a> 
-          </div>
-          <div class="teaching-evaluations">
-            <h8>Sample Teaching Syllabus:</h8> 
-            <a href="https://drive.google.com/file/d/1QkYQTCdSxMH8sZ29a4pCJ6hXKeMbAm2v/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Principles of Macroeconomics</a> 
-            <a href="https://drive.google.com/file/d/1Sr6EiJ_0fk4f8U35Mmdkx4Qr6WllFRAk/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Spreadsheet Analytics</a> 
-          </div>       
-          <div class="teaching-evaluations">
-            <h8>Evaluations:</h8> 
-            <a href="https://drive.google.com/file/d/17PtoxKyiHBNzKvktS9R-6JrbOrih9_Ht/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Summer 2022</a>
-            <a href="https://drive.google.com/file/d/17EO-PLsw8KYgDykGt0qXE8pZSH3533Oh/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Fall 2022</a>
-            <a href="https://drive.google.com/file/d/1IXzq99fVGln0ATLYheLJ4J_U8pkkGKcR/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Summer 2023</a> 
-            <a href="https://drive.google.com/file/d/13vHvYNRJKP4haFTiOxNtxFdVoVaS6Tca/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Spring 2024</a> 
-         </div>
+    <!-- University of Nebraska-Lincoln -->
+    <div class="teaching-institution">
+      <h3 class="institution-name">University of Nebraska-Lincoln</h3>
+      <hr class="institution-line">
+      
+      <div class="course-entry">
+        <div class="course-info">
+          <span class="course-title"><strong>Econ 211: Principles of Macroeconomics</strong></span>
+          <span class="course-semesters">Summer 2022 (Online), Fall 2022, Summer 2023 (Online), Spring 2024</span>
         </div>
-        
-        <div class="teaching-entry">
-          <div class="teaching-header">
-            <span><h3>Teaching Assistant</h3></span>
-            <span>2020 - 2021</span>
-          </div>
-          <div class="teaching-role">University of Nebraska-Lincoln</div>
-          <div class="teaching-course">Principles of Microeconomics & Intermediate Microeconomics</div>
+        <div class="course-materials">
+          <span class="material-label">Syllabus:</span>
+          <a href="https://drive.google.com/file/d/1QkYQTCdSxMH8sZ29a4pCJ6hXKeMbAm2v/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">View</a>
+          <span class="material-label" style="margin-left: 15px;">Evaluations:</span>
+          <a href="https://drive.google.com/file/d/17PtoxKyiHBNzKvktS9R-6JrbOrih9_Ht/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Sum '22</a>
+          <a href="https://drive.google.com/file/d/17EO-PLsw8KYgDykGt0qXE8pZSH3533Oh/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Fall '22</a>
+          <a href="https://drive.google.com/file/d/1IXzq99fVGln0ATLYheLJ4J_U8pkkGKcR/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Sum '23</a>
+          <a href="https://drive.google.com/file/d/13vHvYNRJKP4haFTiOxNtxFdVoVaS6Tca/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Spr '24</a>
         </div>
-        
-        <div class="teaching-entry">
-          <div class="teaching-header">
-            <span><h3>Instructor of Record</h3></span>
-            <span>2019 - 2020</span>
-          </div>
-          <div class="teaching-role">University of Arkansas-Fayetteville</div>
-          <div class="teaching-course">Essentials of Economics</div>
-          <div class="teaching-evaluations">
-            <h8>Evaluations:</h8> 
-            <a href="https://drive.google.com/file/d/1WvYzPpuO-JHcZd0XgoNjYxiupmPC7qSP/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Fall 2019</a>
-            <a href="https://drive.google.com/file/d/1Kw_E9HouM3qbeYXFgHv0kG6hVNrOOvnv/view?usp=drive_link" download class="pdf-link" target="_blank" rel="noopener noreferrer">Spring 2020</a>
-          </div>
+      </div>
+      
+      <div class="course-entry">
+        <div class="course-info">
+          <span class="course-title"><strong>SCMA 250: Spreadsheet Analytics</strong> (Online)</span>
+          <span class="course-semesters">Spring 2026 (3 sections)</span>
         </div>
-        
-        <div class="teaching-entry">
-          <div class="teaching-header">
-            <span><h3>Guest Lecturer</h3></span>
-            <span>2016 - 2017</span>
-          </div>
-          <div class="teaching-role">Asutosh College, Kolkata, India</div>
-          <div class="teaching-course">Micro and Macro Economics, Statistics, & Indian Economic History</div>
+        <div class="course-description">
+          Organization, analysis, and evaluation of data using advanced features of Microsoft Office to solve business problems.
         </div>
-      </section>
+        <div class="course-materials">
+          <span class="material-label">Syllabus:</span>
+          <a href="https://drive.google.com/file/d/1Sr6EiJ_0fk4f8U35Mmdkx4Qr6WllFRAk/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">View</a>
+        </div>
+      </div>
+      
+      <div class="course-entry" style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed #ccc;">
+        <div class="course-info">
+          <span class="course-title" style="font-style: italic; opacity: 0.9;"><strong>Teaching Assistant:</strong> Principles of Microeconomics & Intermediate Microeconomics</span>
+          <span class="course-semesters">2020 – 2021</span>
+        </div>
+      </div>
+      
+      <div class="course-materials" style="margin-top: 20px; padding-top: 12px; border-top: 1px dashed #ccc;">
+        <span class="material-label">Certification:</span>
+        <a href="https://drive.google.com/file/d/17FExMI2YnRMXWoXJWx0OEeRv0PNUeN8B/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">PhD Teaching Certificate</a>
+      </div>
+    </div>
+    
+    <!-- University of Arkansas -->
+    <div class="teaching-institution">
+      <h3 class="institution-name">University of Arkansas-Fayetteville</h3>
+      <hr class="institution-line">
+      
+      <div class="course-entry">
+        <div class="course-info">
+          <span class="course-title"><strong>ECON 2143: Basic Economics: Theory and Practice</strong></span>
+          <span class="course-semesters">Fall 2019, Spring 2020</span>
+        </div>
+        <div class="course-materials">
+          <span class="material-label">Evaluations:</span>
+          <a href="https://drive.google.com/file/d/1WvYzPpuO-JHcZd0XgoNjYxiupmPC7qSP/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Fall '19</a>
+          <a href="https://drive.google.com/file/d/1Kw_E9HouM3qbeYXFgHv0kG6hVNrOOvnv/view?usp=drive_link" class="pdf-link" target="_blank" rel="noopener noreferrer">Spr '20</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Asutosh College -->
+    <div class="teaching-institution">
+      <h3 class="institution-name">Asutosh College, Kolkata, India</h3>
+      <hr class="institution-line">
+      
+      <div class="course-entry">
+        <div class="course-info">
+          <span class="course-title"><strong>Indian Economic History & Statistics for Economics</strong></span>
+          <span class="course-semesters">Fall 2016</span>
+        </div>
+      </div>
+      
+      <div class="course-entry">
+        <div class="course-info">
+          <span class="course-title"><strong>Microeconomics & Macroeconomics</strong></span>
+          <span class="course-semesters">Spring 2017</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <section id="contact">
     <div class="references-grid">
       <div class="reference">
